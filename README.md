@@ -20,8 +20,8 @@ captcha.txt: Output file where the script logs any CAPTCHA detections.
 
 Requirements
 
-Python 3.x
-Selenium WebDriver
+Python 3.x 
+Selenium WebDriver 4.x
 Chrome WebDriver (compatible with your Chrome version)
 
 Setup and Execution
