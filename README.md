@@ -1,8 +1,12 @@
 Domain Categorization Script
+
 Overview
+
 This repository contains a Python script for automating the process of categorizing domains. The script utilizes Selenium WebDriver to interact with a specific website for domain categorization. It reads a list of domains from a file, processes each domain through the website, and handles CAPTCHAs if encountered.
 
+
 Features
+
 Automated Domain Categorization: Processes a list of domains and categorizes them based on the information retrieved from a specified website.
 CAPTCHA Detection: Detects the presence of CAPTCHA during the process and logs the occurrence.
 Result Logging: Stores the categorization results and CAPTCHA detections in separate files for easy review.
