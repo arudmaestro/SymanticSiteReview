@@ -31,3 +31,8 @@ Install Selenium: Install Selenium WebDriver using pip: pip install selenium.
 Set up Chrome WebDriver: Download and set up Chrome WebDriver, ensuring it's added to your system's PATH.
 Prepare domains.txt: Populate domains.txt with the domains you wish to categorize, one domain per line.
 Run the Script: Execute the script with python domain_categorization.py.
+
+Output
+
+results.txt: Contains the domain name and its corresponding categories. If a domain is recognized as a URL shortening service or hasn't been rated, specific messages are recorded.
+captcha.txt: Contains messages for each domain where a CAPTCHA was detected, indicating that the script could not process that domain.
