@@ -4,6 +4,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import re
+
+# Function to validate domain
+def is_valid_domain(domain):
+    regex = r"^(?:http(s)?://)?[\w.-]+(?:\.[\w\.-]+)+$"
+    return re.match(regex, domain)
 
 # Open input file and read domains into list
 with open('domains.txt') as f:
@@ -15,6 +21,9 @@ with open('results.txt', 'w') as out_file:
     with open('captcha.txt', 'a') as captcha_file:
         # Iterate through each domain
         for domain in domains:
+            if not is_valid_domain(domain):
+                print(f"Invalid domain: {domain}")
+                continue
 
             # Launch headless Chrome browser
             browser = webdriver.Chrome()
@@ -22,7 +31,7 @@ with open('results.txt', 'w') as out_file:
             # Navigate to the website
             browser.get("https://sitereview.bluecoat.com/#/")
 
-	    # Set default name variable
+            # Set default name variable
             name = domain
 
             # Find search box, input domain, hit Enter
@@ -74,4 +83,4 @@ with open('results.txt', 'w') as out_file:
             # Close browser instance
             browser.quit()
 
-print("Scraping complete, output saved in results.txt")
+print("Scraping complete, output saved in results.txt")
